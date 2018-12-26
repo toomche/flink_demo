@@ -1,10 +1,10 @@
-package com.yss.flink.dataStream
+package com.yss.flink.datastream.socket
 
 import org.apache.flink.api.java.utils.ParameterTool
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 import org.apache.flink.streaming.api.windowing.time.Time
 
-class SocketWindowWordCount {
+object SocketWindowWordCount {
   def main(args: Array[String]): Unit = {
     var host = "localhost"
     var port = 10000
