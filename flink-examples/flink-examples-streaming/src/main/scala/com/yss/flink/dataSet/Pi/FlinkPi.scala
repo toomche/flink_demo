@@ -15,20 +15,18 @@ object FlinkPi {
 
     val count = env
       .generateSequence(1, num)
-      .map { sample =>
-      {
+      .map(_ => {
         val x = Math.random()
         val y = Math.random()
         val z = x * x + y * y
         if (z > 1) 0l else 1l
-        }
-      }
-      .reduce(_+_)
+      })
+      .reduce(_ + _)
 
     //以上数据计算是基于四分之一个图形
-    val pi = count.map(_*4/num)
+    val pi = count.map(_ * 4 / num)
 
-    printf("Pi is roughly : %s",pi)
+    printf("Pi is roughly : %s", pi)
 
   }
 }
